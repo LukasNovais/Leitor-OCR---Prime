@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extrator Cirúrgico em Lote NF-e (Google AI)</title>
+    <title>Extrator em Lote NF-e (Google AI)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -30,7 +30,6 @@
                     <option value="gemini-3.8-flash">gemini-3.8-flash (Recomendado)</option>
                     <option value="gemini-3.5-flash">gemini-3.5-flash</option>
                     <option value="gemini-2.5-flash">gemini-2.5-flash</option>
-                    <option value="gemini-2.5-pro">gemini-2.5-pro (Alta precisão)</option>
                 </select>
             </div>
             <p class="text-[10px] text-slate-500">A chave é guardada apenas no armazenamento local do seu browser.</p>
@@ -198,7 +197,7 @@
                     });
 
                     const modeloSelecionado = modelSelect.value;
-                    const modelosParaTentar = [modeloSelecionado, 'gemini-3.8-flash', 'gemini-2.5-flash', 'gemini-2.5-pro'];
+                    const modelosParaTentar = [modeloSelecionado, 'gemini-3.8-flash', 'gemini-3.5-flash', 'gemini-2.5-flash'];
                     let data = null;
 
                     const promptInstrucao = `Analisa esta imagem de um DANFE / Nota Fiscal Electrónica.
@@ -303,7 +302,7 @@ REGRAS RÍGIDAS:
             if (chavesExtraidasGlobal.length === 0) return;
             const textoLote = chavesExtraidasGlobal.join('\n');
             navigator.clipboard.writeText(textoLote);
-            alert(`${chavesExtraidasGlobal.length} chaves copias para a área de transferência!`);
+            alert(`${chavesExtraidasGlobal.length} chaves copiadas para a área de transferência!`);
         }
     </script>
 </body>
